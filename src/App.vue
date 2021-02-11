@@ -1,8 +1,13 @@
 <script>
+import SelectProfileList from './components/SelectProfileList.vue'
+
 import profileImagesData from './data/profileImages.json'
 import imagePositionData from './data/imagePosition.json'
 
 export default {
+  components: {
+    SelectProfileList
+  },
   data: () => ({
     baseUrl: 'https://res.cloudinary.com/dzkoxrsdj/image/upload/',
     preferences: {
@@ -76,6 +81,9 @@ export default {
         window.btoa(this.profileImagesList[name]) +
         `,g_north_west,w_190,h_190,r_max,x_${position.x},y_${position.y}`
       )
+    },
+    updateProfileGrid({ name, position }) {
+      this.profileImageGrid[position] = name
     }
   }
 }
@@ -111,20 +119,12 @@ export default {
       <label for="episode-title">Episode Title</label>
       <input type="text" v-model="episodeTitle" />
     </div>
-    <div>
-      <label for="profile-1">Profile #1</label>
-      <select name="profile-1" id="profile-1" v-model="profileImageGrid[0]">
-        <option value="ben">Ben</option>
-        <option value="jason">Jason</option>
-      </select>
-    </div>
-    <div>
-      <label for="profile-2">Profile #2</label>
-      <select name="profile-2" id="profile-2" v-model="profileImageGrid[1]">
-        <option value="ben">Ben</option>
-        <option value="jason">Jason</option>
-      </select>
-    </div>
+    <SelectProfileList
+      v-for="item in [0, 1, 2, 3, 4, 5]"
+      :key="`select-profile-${item}`"
+      :position="item"
+      @update-selection="updateProfileGrid"
+    />
   </form>
 </template>
 
