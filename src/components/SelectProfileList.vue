@@ -1,5 +1,6 @@
 <script>
 import { computed, reactive, toRefs } from 'vue'
+import profileImages from '../data/profileImages.json'
 
 export default {
   props: {
@@ -10,7 +11,7 @@ export default {
   },
   setup(props, { emit }) {
     const state = reactive({
-      names: ['ben', 'cassidy', 'jason', 'kenny', 'phil', 'tara']
+      names: profileImages
     })
 
     const selectProfileId = computed(() => {
@@ -43,9 +44,9 @@ export default {
       :id="selectProfileId"
       @input="updateSelection"
     >
-      <option disabled selected value>-- Select a Name --</option>
+      <option disabled selected>-- Select a Name --</option>
       <option
-        v-for="name in names"
+        v-for="(imageUrl, name) in names"
         :key="`position-${position}-${name}`"
         :value="name"
       >
