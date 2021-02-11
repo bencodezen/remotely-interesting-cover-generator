@@ -35,7 +35,9 @@ export default {
 
 <template>
   <div>
-    <label :for="selectProfileId">Profile #{{ position + 1 }}</label>
+    <label :for="selectProfileId" style="display: block"
+      >Profile #{{ position + 1 }}:
+    </label>
     <select
       :name="selectProfileId"
       :id="selectProfileId"
