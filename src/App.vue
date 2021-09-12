@@ -9,7 +9,7 @@ export default {
     SelectProfileList
   },
   data: () => ({
-    baseUrl: 'https://res.cloudinary.com/dzkoxrsdj/image/upload/',
+    baseUrl: 'https://res.cloudinary.com/dtvjovih7/image/upload/',
     preferences: {
       modifiers: {
         qualityAuto: true,
@@ -17,13 +17,13 @@ export default {
       }
     },
     profileImagesList: profileImagesData,
-    episodeTitle: 'Placeholder',
+    episodeTitle: 'Episode Title Here',
     profileImageGrid: [],
     imagePosition: imagePositionData
   }),
   computed: {
     backgroundImage() {
-      return 'v1599191282/ri-social-2.png'
+      return '/v1631406723/Placeholder_Generator_qx8yj5.png'
     },
     encodedTitle() {
       return window.encodeURI(this.episodeTitle)
@@ -91,7 +91,7 @@ export default {
 
 <template>
   <main style="max-width: 1024px; margin: 0 auto">
-    <h1>Remotely Interesting Cover Generator</h1>
+    <h1>25c Arcade Episode Artwork Generator</h1>
     <div class="main-grid">
       <section>
         <img :src="finalUrl" alt="" style="max-width: 100%" />

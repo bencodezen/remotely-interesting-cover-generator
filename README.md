@@ -1,8 +1,8 @@
-# Remotely Interesting Cover Generator
+# Podcast Episode Art Generator
 
-An app to help dynamically generate the [Remotely Interesting Podcast](https://remotelyinteresting.transistor.fm/)'s cover images.
+An app to help dynamically generate the [25c Arcade podcast](https://goodstuff.network/25c/)'s episode art image.
 
-## Setup
+## Setup from Original Repo
 
 ```bash
 # Clone repo

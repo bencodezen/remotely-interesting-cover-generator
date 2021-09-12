@@ -1,5 +1,5 @@
 {
-  "name": "remotely-interesting-cover-generator",
+  "name": "25c-episode-generator",
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
