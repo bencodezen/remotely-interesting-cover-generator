@@ -46,7 +46,7 @@ export default {
     >
       <option disabled selected>-- Select a Name --</option>
       <option
-        v-for="(imageUrl, name) in names"
+        v-for="(_, name) in names"
         :key="`position-${position}-${name}`"
         :value="name"
       >
